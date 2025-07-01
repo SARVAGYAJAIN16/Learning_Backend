@@ -1,0 +1,33 @@
+ Understand about mongoose and Data Modelling ..
+--->
+
+ -------------------------------------------sub_todo.models.js----------------------------------------------------------------------------------------------------------------------------
+ import mongoose from "mongoose"
+const userSchema = new mongoose.Schema(
+  {
+    // username: String,
+    // email:String,
+    // isActive: Boolean
+    username:{
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true
+    },
+    email:{
+      type: String,
+      required: true,
+      unique: true,
+      lowercae:true 
+    },
+    password:{
+      type:String,
+      required: true
+    }
+  },
+  {
+    timestamps:true
+  }
+ )
+export const User = mongoose.model("User", userSchema)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
